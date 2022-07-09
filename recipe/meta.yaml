@@ -1,5 +1,5 @@
 {% set name = "jarowinkler" %}
-{% set version = "1.1.0" %}
+{% set version = "1.1.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/jarowinkler-{{ version }}.tar.gz
-  sha256: af2505c99e7a3a77489693e06647c84f31a9d84cc31cd10a719391209643188e
+  sha256: afcce095b4c2a04c8dbef4015853c46c88b484ac712ca1ac1f09d91d86aeccce
 
 build:
   number: 0
