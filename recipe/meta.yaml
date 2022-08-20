@@ -35,12 +35,15 @@ requirements:
     - python
 
 test:
-  imports:
-    - jarowinkler
-  commands:
-    - pip check
   requires:
     - pip
+    - gdb
+  commands:
+    - printf "backtrace\nquit\n" > backtrace
+    - chmod +x backtrace
+    - printf '#!/bin/bash\nSCRIPTPATH="$( cd -- "$(dirname "$0")" >/dev/null 2>&1 ; pwd -P )"\nulimit -c unlimited\n"$@"\nif [[ $? -eq 139 ]]; then\n    coredumpctl gdb -1 -A "--batch -x $SCRIPTPATH/backtrace"\nfi\n' > seg_wrapper.sh
+    - chmod +x seg_wrapper.sh
+    - ./seg_wrapper.sh python -c "import rapidfuzz"
 
 about:
   home: https://github.com/maxbachmann/JaroWinkler
