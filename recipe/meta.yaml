@@ -37,7 +37,6 @@ requirements:
 test:
   requires:
     - pip
-    - gdb
   commands:
     - printf "backtrace\nquit\n" > backtrace
     - chmod +x backtrace
