@@ -39,6 +39,7 @@ test:
     - pip
     - gdb
   commands:
+    - ls
     - printf "backtrace\nquit\n" > backtrace
     - chmod +x backtrace
     - ./seg_wrapper.sh python -c "import rapidfuzz"
