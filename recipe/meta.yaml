@@ -8,10 +8,10 @@ package:
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/jarowinkler-{{ version }}.tar.gz
   sha256: 7118976b9c1dca4ad77c97a0595d3917cead5f9b2856b14948a3bcf5f2438c44
+  patches:
+    - patches/test.patch
 
 build:
-  # fail to find the correct head path for Python. This will hopefully improve in scikit-build at some point
-  skip: true  # [python_impl == 'pypy' and (win or (linux and (aarch64 or ppc64le)))]
   # crashes on import, since something goes wrong cross compiling
   # This should be related to https://github.com/scikit-build/scikit-build/issues/589 but I could not get a workaround working
   # at least partly because I do not have a mac for testing
