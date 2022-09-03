@@ -1,15 +1,23 @@
 diff --git a/CMakeLists.txt b/CMakeLists.txt
-index 709c81f..729a715 100644
+index 709c81f..9760009 100644
 --- a/CMakeLists.txt
 +++ b/CMakeLists.txt
-@@ -10,7 +10,6 @@ endif()
+@@ -1,4 +1,4 @@
+-cmake_minimum_required(VERSION 3.12.0)
++cmake_minimum_required(VERSION 3.18.0)
+ 
+ cmake_policy(SET CMP0054 NEW)
+ set(SKBUILD_LINK_LIBRARIES_KEYWORD PRIVATE)
+@@ -10,8 +10,7 @@ endif()
  
  project(jarowinkler LANGUAGES C CXX)
  
 -find_package(PythonExtensions REQUIRED)
- find_package(Python COMPONENTS Interpreter Development)
+-find_package(Python COMPONENTS Interpreter Development)
++find_package(Python COMPONENTS Interpreter Development.Module)
  include(FetchContent)
  
+ set(JW_BASE_DIR ${CMAKE_CURRENT_SOURCE_DIR}/src)
 diff --git a/src/jarowinkler/CMakeLists.txt b/src/jarowinkler/CMakeLists.txt
 index 8caf71a..62f43c4 100644
 --- a/src/jarowinkler/CMakeLists.txt
