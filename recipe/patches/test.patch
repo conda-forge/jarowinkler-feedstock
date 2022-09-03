@@ -1,0 +1,12 @@
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index 709c81f..729a715 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -10,7 +10,6 @@ endif()
+ 
+ project(jarowinkler LANGUAGES C CXX)
+ 
+-find_package(PythonExtensions REQUIRED)
+ find_package(Python COMPONENTS Interpreter Development)
+ include(FetchContent)
+ 
