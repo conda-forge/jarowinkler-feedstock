@@ -8,13 +8,11 @@ package:
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/jarowinkler-{{ version }}.tar.gz
   sha256: 206364a885ce296f7f79c669734317f2741f6bbd964907e49e3b9ea0e9de5029
-  patches:
-    - patches/scikit-build-issues.patch
 
 build:
   number: 0
   script:
-    - {{ PYTHON }} -m pip install . -vvv
+    - VERBOSE=1 {{ PYTHON }} -m pip install . -vvv
 
 requirements:
   build:
