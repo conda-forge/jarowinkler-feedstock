@@ -14,7 +14,8 @@ source:
 build:
   number: 0
   script:
-    - VERBOSE=1 {{ PYTHON }} -m pip install . -vvv
+    - VERBOSE=1 {{ PYTHON }} -m pip install . -vvv # [linux or osx]
+    - {{ PYTHON }} -m pip install . -vvv # [win]
 
 requirements:
   build:
