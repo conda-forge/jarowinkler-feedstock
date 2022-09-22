@@ -51,10 +51,10 @@ index 709c81f..8d478d7 100644
  endif()
  
 diff --git a/src/jarowinkler/CMakeLists.txt b/src/jarowinkler/CMakeLists.txt
-index 8caf71a..41855fb 100644
+index 8caf71a..6fd48e4 100644
 --- a/src/jarowinkler/CMakeLists.txt
 +++ b/src/jarowinkler/CMakeLists.txt
-@@ -11,7 +11,7 @@ function(create_cython_target _name)
+@@ -11,9 +11,8 @@ function(create_cython_target _name)
  endfunction(create_cython_target)
  
  create_cython_target(_initialize_cpp)
@@ -63,3 +63,5 @@ index 8caf71a..41855fb 100644
  target_compile_features(_initialize_cpp PUBLIC cxx_std_14)
  target_include_directories(_initialize_cpp PRIVATE ${RF_CAPI_PATH} ${JW_BASE_DIR}/jarowinkler)
  target_link_libraries(_initialize_cpp PRIVATE jaro_winkler::jaro_winkler)
+-python_extension_module(_initialize_cpp)
+ install(TARGETS _initialize_cpp LIBRARY DESTINATION src/jarowinkler)
