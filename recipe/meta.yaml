@@ -1,5 +1,5 @@
 {% set name = "jarowinkler" %}
-{% set version = "1.2.1" %}
+{% set version = "1.2.2" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/jarowinkler-{{ version }}.tar.gz
-  sha256: 206364a885ce296f7f79c669734317f2741f6bbd964907e49e3b9ea0e9de5029
+  sha256: 327f8154db2d09f81d69065e1abf5abe1f4675fbe54091883139b32616b488aa
 
 build:
   # fail to find the correct head path for Python. This will hopefully improve in scikit-build at some point
