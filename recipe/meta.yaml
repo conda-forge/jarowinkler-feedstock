@@ -10,29 +10,21 @@ source:
   sha256: 7cfb5e5caef5d22bae44e9cadcd1ff7313970e70303feff31ff78e8b69c92648
 
 build:
-  # fail to find the correct head path for Python. This will hopefully improve in scikit-build at some point
-  skip: true  # [python_impl == 'pypy' and (linux and (aarch64 or ppc64le))]
+  noarch: python
   number: 0
   script:
     - {{ PYTHON }} -m pip install . -vvv
 
 requirements:
   build:
-    - python                                 # [build_platform != target_platform]
-    - cross-python_{{ target_platform }}     # [build_platform != target_platform]
-    - {{ compiler('c') }}
-    - {{ compiler('cxx') }}
-    - cmake
-    - make
+    - python >=3.8
   host:
+    - python >=3.8
     - pip
-    - python
-    - scikit-build
-    - wheel
-    - setuptools
-    - rapidfuzz_capi
+    - rapidfuzz >=3.5.2,<4.0.0
   run:
-    - python
+    - python >=3.8
+    - rapidfuzz >=3.5.2,<4.0.0
 
 test:
   imports:
