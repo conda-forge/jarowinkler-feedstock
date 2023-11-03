@@ -21,10 +21,10 @@ requirements:
   host:
     - python >=3.8
     - pip
-    - rapidfuzz >=3.5.2,<4.0.0
+    - rapidfuzz >=3.5.2
   run:
     - python >=3.8
-    - rapidfuzz >=3.5.2,<4.0.0
+    - rapidfuzz >=3.5.2
 
 test:
   imports:
