@@ -6,12 +6,12 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/jarowinkler-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/jarowinkler-{{ version }}.tar.gz
   sha256: 7640c79f8d2d5e9eed6691cb49e3018a23b2319daad9a2178df253368b5432b7
 
 build:
   noarch: python
-  number: 0
+  number: 1
   script:
     - {{ PYTHON }} -m pip install . -vvv
 
@@ -19,11 +19,11 @@ requirements:
   build:
     - python >=3.8
   host:
-    - python >=3.8
+    - python {{ python_min }}
     - pip
     - rapidfuzz >=3.5.2
   run:
-    - python >=3.8
+    - python >={{ python_min }}
     - rapidfuzz >=3.5.2
 
 test:
@@ -33,6 +33,7 @@ test:
     - pip check
   requires:
     - pip
+    - python {{ python_min }}
 
 about:
   home: https://github.com/maxbachmann/JaroWinkler
